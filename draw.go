@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"ok/display"
+
+	"github.com/spektroskop/ok/display"
 
 	"github.com/dustin/go-humanize"
 	"github.com/nsf/termbox-go"

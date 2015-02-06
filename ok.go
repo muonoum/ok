@@ -2,12 +2,13 @@ package main
 
 import (
 	"flag"
-	"ok/display"
-	"ok/matcher"
-	"ok/reader"
-	"ok/util"
 	"os"
 	"time"
+
+	"github.com/spektroskop/ok/display"
+	"github.com/spektroskop/ok/matcher"
+	"github.com/spektroskop/ok/reader"
+	"github.com/spektroskop/ok/util"
 
 	"github.com/nsf/termbox-go"
 )

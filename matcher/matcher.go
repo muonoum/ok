@@ -1,10 +1,11 @@
 package matcher
 
 import (
-	"ok/util"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/spektroskop/ok/util"
 )
 
 type Entry struct {
