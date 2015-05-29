@@ -96,6 +96,10 @@ Loop:
 					if editor.RemoveToEnd() {
 						goto Search
 					}
+				case termbox.KeyCtrlU:
+					if editor.RemoveToBeginning() {
+						goto Search
+					}
 
 				case termbox.KeyArrowRight:
 					editor.MoveForward()
