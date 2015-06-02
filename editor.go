@@ -56,7 +56,7 @@ func (editor *Editor) RemoveBackwards() bool {
 
 func (editor *Editor) RemoveToBeginning() bool {
 	s, c := editor.State()
-	if len(s) == 0 {
+	if c == 0 || len(s) == 0 {
 		return false
 	}
 	editor.Update(s[c:], 0)
