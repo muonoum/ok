@@ -37,8 +37,10 @@ func Draw(search string, width, height, selected int) {
 			display.Print(0, y+1, "--", 237)
 		}
 
+		var index int
+
 		x := 3
-		for index, char := range match.Text {
+		for _, char := range match.Text {
 			if x+index >= width-3 {
 				display.Print(x+index+1, y+1, "»", 237)
 				break
@@ -52,6 +54,7 @@ func Draw(search string, width, height, selected int) {
 				display.Print(x+index, y+1, string(char), 162)
 			}
 
+			index++
 		}
 	}
 }

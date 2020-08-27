@@ -27,8 +27,10 @@ func makeattrs(attrs ...termbox.Attribute) (a termbox.Attribute, b termbox.Attri
 
 func Print(x, y int, s string, attrs ...termbox.Attribute) {
 	fg, bg := makeattrs(attrs...)
-	for i, r := range s {
+	var i int
+	for _, r := range s {
 		termbox.SetCell(x+i, y, r, fg, bg)
+		i++
 	}
 }
 

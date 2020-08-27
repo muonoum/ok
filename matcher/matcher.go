@@ -53,7 +53,7 @@ func Run(search string, choices []string, matchChan chan<- Matches, doneChan <-c
 
 	if len(search) == 0 {
 		for _, choice := range choices {
-			matches = append(matches, Entry{choice, 0, 0, 0, nil})
+			matches = append(matches, Entry{choice, 1.0, 0, 0, make(map[int]bool)})
 		}
 
 		goto End
@@ -65,7 +65,7 @@ func Run(search string, choices []string, matchChan chan<- Matches, doneChan <-c
 			util.Debugf("Cancel `%s'\n", search)
 			return
 		default:
-			if score, matched, start, end := Score(search, choice); score > 0 {
+			if score, matched, start, end := Score(strings.ToLower(search), strings.ToLower(choice)); score > 0 {
 				matches = append(matches, Entry{choice, score, start, end, matched})
 			}
 		}
