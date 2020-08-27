@@ -41,7 +41,7 @@ func (editor *Editor) Remove() bool {
 	if len(s) == 0 || c < len(s) {
 		return false
 	}
-	editor.Update(s[:c]+s[c+1:len(s)], c)
+	editor.Update(s[:c]+s[c+1:], c)
 	return true
 }
 
@@ -50,7 +50,7 @@ func (editor *Editor) RemoveBackwards() bool {
 	if c == 0 || len(s) == 0 {
 		return false
 	}
-	editor.Update(s[:c-1]+s[c:len(s)], c-1)
+	editor.Update(s[:c-1]+s[c:], c-1)
 	return true
 }
 
