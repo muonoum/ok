@@ -10,7 +10,7 @@ import (
 )
 
 func Draw(search string, width, height, selected int) {
-	prompt, style := ">>", 111|termbox.AttrBold
+	prompt, style := *prompt, 111|termbox.AttrBold
 
 	if !matching {
 		display.Print(0, 0, prompt, style)

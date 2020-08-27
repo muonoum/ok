@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"os"
 	"time"
 
 	"github.com/spektroskop/ok/display"
@@ -24,6 +23,7 @@ var (
 	height   int
 	editor   Editor
 	spinner  Spinner
+	prompt   = flag.String("prompt", ">>", "")
 )
 
 func main() {
@@ -141,6 +141,6 @@ Loop:
 	termbox.Close()
 
 	if len(output) != 0 {
-		Output(output, os.Args[1:])
+		Output(output, flag.Args())
 	}
 }
