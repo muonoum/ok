@@ -52,6 +52,10 @@ func Run(search string, choices []string, matchChan chan<- Matches, doneChan <-c
 	var matches Matches
 
 	if len(search) == 0 {
+		for _, choice := range choices {
+			matches = append(matches, Entry{choice, 0, 0, 0, nil})
+		}
+
 		goto End
 	}
 

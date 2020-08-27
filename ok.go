@@ -68,6 +68,8 @@ Loop:
 		case entries := <-reader.MaybeChan(readerChan, !matching):
 			choices = append(choices, entries...)
 			util.Debug("Choices", len(choices))
+			// TODO debounce søk her
+			goto Search
 
 		case event := <-eventChan:
 			switch event.Type {
